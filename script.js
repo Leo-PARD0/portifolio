@@ -6,7 +6,7 @@ toggleBtn.addEventListener("click", () => {
 
 // Efeito de digitação
 const typing = document.querySelector(".typing");
-const text = "Dione Braga Ferreira";
+const text = "Alterando informações";
 let i = 0;
 function typeWriter() {
   if (i < text.length) {

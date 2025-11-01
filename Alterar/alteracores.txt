@@ -1,0 +1,82 @@
+HomePage:
+    nome no header body > div.nav > div > <div class="brand">Dione Braga</div>
+
+    Competencias    <div class="chips">
+                        <span class="chip">Tecnologia</span>
+                        <span class="chip">Cultura</span>
+                        <span class="chip">Qualidade de Software</span>
+                        <span class="chip">Análise de Dados</span>
+                    </div>
+
+    saudação    <h1>Olá, eu sou <span id="typing">Dione Braga Ferreira</span></h1>
+
+    Competencias 2  <p style="max-width:52ch; color:var(--muted); margin: .6rem 0 1.2rem">
+                        Gestão Pública • Projetos Culturais • QA • Python • Selenium • Postman • Análise de Dados
+                    </p>
+
+    Foto        <image href="https://avatars.githubusercontent.com/u/171820503" width="200" height="200" clip-path="url(#circleView)" preserveAspectRatio="xMidYMid slice"></image>
+
+    Texto "Sobre mim"   <p style="max-width:70ch">
+                        Sou de Ilhabela, formada em Gestão de Recursos Humanos e pós-graduada em Gestão Pública (Uninter) e em Gestão Cultural e Economia Criativa (PUC Rio).
+                        Desde 2017, atuo conectando tecnologia e cultura: facilitação, editais, portfólios, mapeamentos e políticas públicas.
+                        Atualmente, facilito os cursos de Qualidade de Software (QA) e Análise de Dados no Instituto Joga Junto.
+                        </p>
+
+    Timeline        <div class="timeline">
+                        <div class="t-item">
+                            <h3>Instituto Joga Junto</h3>
+                            <div class="when">2023 – Atual</div>
+                            <p>Facilitadora de Qualidade de Software (QA).</p>
+                        </div>
+                        <div class="t-item">
+                            <h3>Instituto Joga Junto</h3>
+                            <div class="when">2023 – Atual</div>
+                            <p>Facilitadora de Análise de Dados.</p>
+                        </div>
+                        <div class="t-item">
+                            <h3>Cadastro Cultural de Ilhabela</h3>
+                            <div class="when">2019 – Atual</div>
+                            <p>CEO e apoio aos artistas em editais e projetos.</p>
+                        </div>
+                        <div class="t-item">
+                            <h3>Prefeitura de Ilhabela</h3>
+                            <div class="when">2017 – Atual</div>
+                            <p>Gestão Pública e Gestão de Projetos Culturais.</p>
+                        </div>
+                        </div>
+
+    Projetos em destaque    <div class="grid">
+                                <article class="card tilt">
+                                    <h4>Cadastro Cultural</h4>
+                                    <p>Mapeamento cultural de Ilhabela; suporte aos artistas; base para implementação do Sistema Municipal de Indicadores Culturais e da Lei Aldir Blanc.</p>
+                                </article>
+                                <article class="card tilt">
+                                    <h4>Ilhabela Tech</h4>
+                                    <p>Formação em tecnologia com foco em QA, ampliando empregabilidade local.</p>
+                                </article>
+                                <article class="card tilt">
+                                    <h4>Guias Históricos</h4>
+                                    <p>Capacitação de guias locais valorizando memória e turismo cultural.</p>
+                                </article>
+                                </div>
+
+    Contato:
+        Email   <a class="pill" href="mailto:dionebraga.work@gmail.com">
+                    <i class="fa-solid fa-envelope"></i> E-mail
+                </a>
+        Telefone<a class="pill" href="tel:+5512982912522">
+                    <i class="fa-solid fa-phone"></i> Telefone
+                </a>
+        Site    <a class="pill" href="https://www.cadastrocultural.com.br" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-globe"></i> Site
+                </a>
+        Linkedin<a class="pill" href="https://www.linkedin.com/in/dionebraga/" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+        Instagram<a class="pill" href="https://www.instagram.com/dionebraga_/" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+        
+    Rodapé      <footer>© 2025 • Dione Braga Ferreira</footer>
+SobrePage:
+    
