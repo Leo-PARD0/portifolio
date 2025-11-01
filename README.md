@@ -1,3 +1,5 @@
+Mudanças em andamento, repositório clonado!
+
 # 🌐 Portfólio – Dione Braga Ferreira
 
 Este projeto é o meu portfólio pessoal, desenvolvido em **HTML, CSS e JavaScript puro**.  
@@ -29,8 +31,8 @@ O objetivo é servir tanto como **currículo interativo** quanto como **laborat�
 📸 Instagram: instagram.com/seuusuario
 🌐 Site: Cadastro Cultural
 
-
 ## 📂 Estrutura do projeto
+
 ```bash
 portfolio/
 ├── index.html        # Página principal
@@ -51,3 +53,4 @@ Abra o arquivo index.html no navegador de sua preferência.
 📄 Licença
 Este projeto está sob a licença MIT.
 Sinta-se à vontade para usar como referência.
+```
