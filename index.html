@@ -8,13 +8,13 @@
 <title>Portfólio – Leonardo E. Blanco Pagliari</title>
 <style>
   :root{
-    --bg: #0f172a;
-    --surface: #111827;
+    --bg: #242424;
+    --surface: #636363;
     --text: #e5e7eb;
-    --muted: #94a3b8;
-    --accent: #22d3ee;
-    --accent-2:#a78bfa;
-    --card: #0b1220;
+    --muted: #b89494;
+    --accent: #92211A;
+    --accent-2:#ed7615;
+    --card: #58262A;
     --shadow: 0 10px 30px rgba(0,0,0,.35);
   }
   [data-theme="light"]{
@@ -22,9 +22,9 @@
     --surface: #ffffff;
     --text: #0f172a;
     --muted: #475569;
-    --accent: #0ea5e9;
-    --accent-2:#7c3aed;
-    --card: #ffffff;
+    --accent: #ed7615;
+    --accent-2:#92211A;
+    --card: #fdeded;
     --shadow: 0 10px 30px rgba(2,8,23,.08);
   }
 
@@ -91,6 +91,19 @@
       color-mix(in oklab, var(--card) 98%, transparent));
     border:1px solid color-mix(in oklab, var(--text) 10%, transparent);
     border-radius:14px; padding:1.2rem; box-shadow: var(--shadow);}
+  
+  /* Link cards - remove link styling */
+  a.card{
+    text-decoration: none;
+    color: inherit;
+  }
+  a.card:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+  a.card:visited{
+    color: inherit;
+  }
 
   /* Contact row */
   .contacts{display:flex; gap:.6rem; flex-wrap:wrap}
@@ -124,16 +137,15 @@
   <!-- HERO -->
   <section class="hero">
     <div>
-      <div class="chips">
-        <span class="chip">Tecnologia</span>
-        <span class="chip">Cultura</span>
+      <div class="chips"> <!--Competencias principais-->
+        <span class="chip">Python</span>
+        <span class="chip">Selenium</span>
         <span class="chip">Qualidade de Software</span>
-        <span class="chip">Análise de Dados</span>
-        <span class="chip">Fazendo Mudanças Neste Portifólio</span>
+        <span class="chip">WebScraping</span>
       </div>
-      <h1>Olá, eu sou <span id="typing"></span></h1>
+      <h1>Olá, eu sou <span id="typing"></span></h1> <!--Texto que se escreve-->
       <p style="max-width:52ch; color:var(--muted); margin: .6rem 0 1.2rem">
-        Gestão Pública • MEXENDO NO PORTIFOLIO • QA
+        QA • Testes Automatizados • BDD • SCRUM<!--Competencias totais-->
       </p>
       <a class="cta" href="#contato">Fale comigo</a>
     </div>
@@ -144,8 +156,8 @@
             <circle cx="100" cy="100" r="95" />
           </clipPath>
         </defs>
-        <image href="https://avatars.githubusercontent.com/u/171820503"
-          width="200" height="200" clip-path="url(#circleView)" preserveAspectRatio="xMidYMid slice"/>
+        <image href="https://avatars.githubusercontent.com/u/153308202?v=4"
+          width="200" height="200" clip-path="url(#circleView)" preserveAspectRatio="xMidYMid slice"</image> <!-- Foto de perfil --> <!--https://avatars.githubusercontent.com/u/171820503-->
         <circle cx="100" cy="100" r="95" fill="none" stroke="var(--accent)" stroke-width="4"/>
       </svg>
     </div>
@@ -155,9 +167,7 @@
   <section id="sobre" class="wrap reveal">
     <h2 class="section-title"><span class="bar"></span> Sobre mim</h2>
     <p style="max-width:70ch">
-      Sou de Ilhabela, formada em Gestão de Recursos Humanos e pós-graduada em Gestão Pública (Uninter) e em Gestão Cultural e Economia Criativa (PUC Rio).
-      Desde 2017, atuo conectando tecnologia e cultura: facilitação, editais, portfólios, mapeamentos e políticas públicas.
-      Atualmente, facilito os cursos de Qualidade de Software (QA) e Análise de Dados no Instituto Joga Junto.
+      Sou Uruguaio, mas moro em Ilhabela-SP desde meus 5 anos. Estou finalizando um curso de QA pela ONG Instituto Joga Junto. Sou um profissional versátil, com experiência em manutenção de equipamentos eletrônicos, tecnologia e assistência técnica. Tenho facilidade para compreender sistemas e processos, além de curiosidade natural para aprender e aprimorar métodos de trabalho. Gosto de unir raciocínio lógico e prática para resolver problemas de forma eficiente, buscando sempre entregar resultados de qualidade e contribuir para o bom funcionamento das operações.
     </p>
   </section>
 
@@ -166,29 +176,24 @@
     <h2 class="section-title"><span class="bar"></span> Experiência</h2>
     <div class="timeline">
       <div class="t-item">
-        <h3>Instituto Joga Junto</h3>
-        <div class="when">2023 – Atual</div>
-        <p>Facilitadora de Qualidade de Software (QA).</p>
+        <h3>Restaurante Makai Ilhabela</h3>
+        <div class="when">2024 – 2025</div>
+        <p>Analista de Estoque</p>
       </div>
       <div class="t-item">
-        <h3>Instituto Joga Junto</h3>
-        <div class="when">2023 – Atual</div>
-        <p>Facilitadora de Análise de Dados.</p>
+        <h3>Canal MotoPLAY</h3>
+        <div class="when">2024 – 2024</div>
+        <p>Editor de Vídeo e Auxiliar Geral</p>
       </div>
       <div class="t-item">
-        <h3>Cadastro Cultural de Ilhabela</h3>
-        <div class="when">2019 – Atual</div>
-        <p>CEO e apoio aos artistas em editais e projetos.</p>
-      </div>
-      <div class="t-item">
-        <h3>Prefeitura de Ilhabela</h3>
-        <div class="when">2017 – Atual</div>
-        <p>Gestão Pública e Gestão de Projetos Culturais.</p>
+        <h3>Papelaria Bom Custo</h3>
+        <div class="when">2021 – 2023</div>
+        <p>Atendente e Social Media</p>
       </div>
     </div>
   </section>
 
-  <!-- PROJETOS -->
+  <!-- PROJETOS
   <section id="projetos" class="wrap reveal">
     <h2 class="section-title"><span class="bar"></span> Projetos em destaque</h2>
     <div class="grid">
@@ -205,31 +210,44 @@
         <p>Capacitação de guias locais valorizando memória e turismo cultural.</p>
       </article>
     </div>
-  </section>
+  </section>  -->
+
+<!-- PROJETOS -->
+<section id="projetos" class="wrap reveal">
+  <h2 class="section-title"><span class="bar"></span> Projetos em destaque</h2>
+  <div class="grid">
+    <a href="https://drive.google.com/file/d/1Q_rnj8TcQWeqxkIyw3EgDFJPGG4zkGD0/view?usp=drivesdk" 
+       target="_blank" 
+       class="card tilt link-card">
+      <h4>Fragmentos</h4>
+      <p>Participei da peça teatral “Fragmentos” como roteirista auxiliar, sonoplasta, editor de vídeo e assistente de direção, integrando diferentes áreas técnicas e criativas na produção da obra.</p>
+    </a>
+  </div>
+</section>
 
   <!-- CONTATO -->
   <section id="contato" class="wrap reveal">
     <h2 class="section-title"><span class="bar"></span> Contato</h2>
     <div class="contacts">
-      <a class="pill" href="mailto:dionebraga.work@gmail.com">
+      <a class="pill" href="mailto:Leonardoezeblapag@gmail.com">
         <i class="fa-solid fa-envelope"></i> E-mail
       </a>
-      <a class="pill" href="tel:+5512982912522">
+      <a class="pill" href="https://wa.me/+5512996115516">
         <i class="fa-solid fa-phone"></i> Telefone
       </a>
-      <a class="pill" href="https://www.cadastrocultural.com.br" target="_blank" rel="noopener">
+      <a class="pill" href="https://www.sparkstylus.com.br" target="_blank" rel="noopener">
         <i class="fa-solid fa-globe"></i> Site
       </a>
-      <a class="pill" href="https://www.linkedin.com/in/dionebraga/" target="_blank" rel="noopener">
+      <a class="pill" href="www.linkedin.com/in/leonardo-e-b-pagliari" target="_blank" rel="noopener">
         <i class="fa-brands fa-linkedin"></i> LinkedIn
       </a>
-      <a class="pill" href="https://www.instagram.com/dionebraga_/" target="_blank" rel="noopener">
+      <a class="pill" href="https://www.instagram.com/sparkstylus?igsh=MXBzc2w3ZHFwaXFkYg==" target="_blank" rel="noopener">
         <i class="fa-brands fa-instagram"></i> Instagram
       </a>
     </div>
   </section>
 
-  <footer>© 2025 • Dione Braga Ferreira</footer>
+  <footer>© 2025 • Leonardo E. Blanco Pagliari</footer>
 
 <script>
   // Tema (dark/light)
@@ -244,7 +262,7 @@
 
   // Efeito de digitação
   const typingEl = document.getElementById('typing');
-  const nameText = 'Dione Braga Ferreira';
+  const nameText = 'Leonardo Blanco'; // js efeito de digitação
   let idx = 0;
   function type() {
     if (idx <= nameText.length){
