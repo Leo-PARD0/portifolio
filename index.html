@@ -1,199 +1,384 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-<title>Portfólio – Leonardo E. Blanco Pagliari</title>
-<style>
-  :root{
-    --bg: #1b0d0d;
-    --surface: #7b6c6c;
-    --text: #e5e7eb;
-    --muted: #b89494;
-    --accent: #92211A;
-    --accent-2:#ed7615;
-    --card: #58262A;
-    --shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-  [data-theme="light"]{
-    --bg: #fcf5f5;
-    --surface: #ff0000;
-    --text: #0f172a;
-    --muted: #475569;
-    --accent: #ed7615;
-    --accent-2:#92211A;
-    --card: #fce8e8;
-    --shadow: 0 10px 30px rgba(2,8,23,.08);
-  }
+    <title>Portfólio – Leonardo E. Blanco Pagliari</title>
+    <style>
+      :root {
+        --bg: #1b0d0d;
+        --surface: #7b6c6c;
+        --text: #e5e7eb;
+        --muted: #b89494;
+        --accent: #92211a;
+        --accent-2: #ed7615;
+        --card: #58262a;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      [data-theme="light"] {
+        --bg: #fcf5f5;
+        --surface: #ff0000;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #ed7615;
+        --accent-2: #92211a;
+        --card: #fce8e8;
+        --shadow: 0 10px 30px rgba(2, 8, 23, 0.08);
+      }
 
-  *{box-sizing:border-box}
-  body{
-    margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.15), transparent 40%),
-                radial-gradient(1000px 800px at 100% 10%, rgba(167,139,250,.12), transparent 45%),
-                var(--bg);
-    color:var(--text);
-    transition: background .3s ease, color .3s ease;
-    scroll-behavior:smooth;
-  }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        background: radial-gradient(
+            1200px 600px at 10% -10%,
+            rgba(34, 211, 238, 0.15),
+            transparent 40%
+          ),
+          radial-gradient(
+            1000px 800px at 100% 10%,
+            rgba(167, 139, 250, 0.12),
+            transparent 45%
+          ),
+          var(--bg);
+        color: var(--text);
+        transition: background 0.3s ease, color 0.3s ease;
+        scroll-behavior: smooth;
+      }
 
-  /* Navbar */
-  .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
-    background: color-mix(in oklab, var(--bg) 85%, transparent);
-    border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);}
-  .nav-inner{max-width:1100px; margin:auto; padding:.8rem 1rem;
-    display:flex; align-items:center; justify-content:space-between;}
-  .brand{font-weight:700}
-  .nav a{color:var(--text); text-decoration:none; margin-left:1rem; font-weight:600; opacity:.9}
-  .nav a:hover{opacity:1; color:var(--accent)}
-  .theme-btn{border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
-    background:transparent; color:var(--text);
-    border-radius:999px; padding:.45rem .8rem; cursor:pointer; font-weight:600;}
+      /* Navbar */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: color-mix(in oklab, var(--bg) 85%, transparent);
+        border-bottom: 1px solid
+          color-mix(in oklab, var(--text) 10%, transparent);
+      }
+      .nav-inner {
+        max-width: 1100px;
+        margin: auto;
+        padding: 0.8rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        font-weight: 700;
+      }
+      .nav a {
+        color: var(--text);
+        text-decoration: none;
+        margin-left: 1rem;
+        font-weight: 600;
+        opacity: 0.9;
+      }
+      .nav a:hover {
+        opacity: 1;
+        color: var(--accent);
+      }
+      .theme-btn {
+        border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+        background: transparent;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 0.45rem 0.8rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
 
-  /* Hero */
-  .hero{max-width:1100px; margin: 2rem auto 0; padding: 4rem 1rem 3rem;
-    display:grid; gap:1.5rem; grid-template-columns: 1.2fr .8fr;}
-  .hero h1{font-size: clamp(2rem, 4vw + 1rem, 3.5rem); line-height:1.15; margin:.2rem 0}
-  .chips{display:flex; flex-wrap:wrap; gap:.5rem; margin:.8rem 0 1.2rem}
-  .chip{background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 45%, transparent),
-      color-mix(in oklab, var(--accent-2) 45%, transparent));
-    color:#0b1220; font-weight:700; padding:.35rem .7rem; border-radius:999px; font-size:.85rem;}
-  .cta{display:inline-flex; gap:.6rem; align-items:center;
-    background:linear-gradient(90deg, var(--accent), var(--accent-2));
-    color:#0b1220; text-decoration:none; font-weight:800;
-    padding:.9rem 1.1rem; border-radius:10px; box-shadow: var(--shadow);}
-  .cta:hover{transform:translateY(-2px)}
-  .hero-card{display:flex; align-items:center; justify-content:center;}
+      /* Hero */
+      .hero {
+        max-width: 1100px;
+        margin: 2rem auto 0;
+        padding: 4rem 1rem 3rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+        line-height: 1.15;
+        margin: 0.2rem 0;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0.8rem 0 1.2rem;
+      }
+      .chip {
+        background: linear-gradient(
+          90deg,
+          color-mix(in oklab, var(--accent) 45%, transparent),
+          color-mix(in oklab, var(--accent-2) 45%, transparent)
+        );
+        color: #0b1220;
+        font-weight: 700;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+      .cta {
+        display: inline-flex;
+        gap: 0.6rem;
+        align-items: center;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #0b1220;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 0.9rem 1.1rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+      .cta:hover {
+        transform: translateY(-2px);
+      }
+      .hero-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-  /* Sections */
-  section{scroll-margin-top:80px}
-  .wrap{max-width:1100px; margin:0 auto; padding: 2rem 1rem 3rem}
-  .section-title{font-size: clamp(1.4rem, 1vw + 1rem, 2rem);
-    margin:1rem 0 2rem; display:flex; align-items:center; gap:.6rem;}
-  .section-title .bar{width: 60px; height:4px; border-radius:999px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));}
+      /* Sections */
+      section {
+        scroll-margin-top: 80px;
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+      }
+      .section-title {
+        font-size: clamp(1.4rem, 1vw + 1rem, 2rem);
+        margin: 1rem 0 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .section-title .bar {
+        width: 60px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
 
-  /* Timeline */
-  .timeline{position:relative; padding-left:28px}
-  .timeline:before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px;
-    background: color-mix(in oklab, var(--text) 12%, transparent);}
-  .t-item{position:relative; margin:0 0 18px; padding-left:8px}
-  .t-item:before{content:""; position:absolute; left:-4px; top:.4rem;
-    width:10px; height:10px; border-radius:999px; background: var(--accent);}
-  .t-item h3{margin:0; font-size:1.05rem}
-  .t-item .when{font-size:.9rem; color:var(--muted)}
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 28px;
+      }
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: color-mix(in oklab, var(--text) 12%, transparent);
+      }
+      .t-item {
+        position: relative;
+        margin: 0 0 18px;
+        padding-left: 8px;
+      }
+      .t-item:before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 0.4rem;
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+      .t-item h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      .t-item .when {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
 
-  /* Cards */
-  .grid{display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))}
-  .card{background:linear-gradient(180deg, color-mix(in oklab, var(--card) 90%, transparent),
-      color-mix(in oklab, var(--card) 98%, transparent));
-    border:1px solid color-mix(in oklab, var(--text) 10%, transparent);
-    border-radius:14px; padding:1.2rem; box-shadow: var(--shadow);}
-  
-  /* Link cards - remove link styling */
-  a.card{
-    text-decoration: none;
-    color: inherit;
-  }
-  a.card:hover{
-    text-decoration: none;
-    color: inherit;
-  }
-  a.card:visited{
-    color: inherit;
-  }
+      /* Cards */
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+      .card {
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--card) 90%, transparent),
+          color-mix(in oklab, var(--card) 98%, transparent)
+        );
+        border: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+        border-radius: 14px;
+        padding: 1.2rem;
+        box-shadow: var(--shadow);
+      }
 
-  /* Contact row */
-  .contacts{display:flex; gap:.6rem; flex-wrap:wrap}
-  .pill{display:inline-flex; align-items:center; gap:.5rem;
-    border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
-    padding:.6rem .9rem; border-radius:999px; text-decoration:none; color:var(--text)}
-  .pill:hover{border-color: var(--accent); color: var(--accent)}
-  .pill i{font-size:1.1rem}
+      /* Link cards - remove link styling */
+      a.card {
+        text-decoration: none;
+        color: inherit;
+      }
+      a.card:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+      a.card:visited {
+        color: inherit;
+      }
 
-  /* Footer */
-  footer{padding:2rem 1rem; text-align:center; color:var(--muted)}
-  @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
-</style>
-</head>
-<body>
+      /* Contact row */
+      .contacts {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+        padding: 0.6rem 0.9rem;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--text);
+      }
+      .pill:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .pill i {
+        font-size: 1.1rem;
+      }
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand">Leonardo Blanco</div>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-        <button class="theme-btn" id="themeToggle">Alternar tema</button>
-      </nav>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <div class="chips"> <!--Competencias principais-->
-        <span class="chip">Python</span>
-        <span class="chip">Selenium</span>
-        <span class="chip">Qualidade de Software</span>
-        <span class="chip">WebScraping</span>
+      /* Footer */
+      footer {
+        padding: 2rem 1rem;
+        text-align: center;
+        color: var(--muted);
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="brand">Leonardo Blanco</div>
+        <nav>
+          <a href="#sobre">Sobre</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+          <button class="theme-btn" id="themeToggle">Alternar tema</button>
+        </nav>
       </div>
-      <h1>Olá, eu sou <span id="typing"></span></h1> <!--Texto que se escreve-->
-      <p style="max-width:52ch; color:var(--muted); margin: .6rem 0 1.2rem">
-        QA • Testes Automatizados • BDD • SCRUM<!--Competencias totais-->
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="chips">
+          <!--Competencias principais-->
+          <span class="chip">Python</span>
+          <span class="chip">Selenium</span>
+          <span class="chip">Qualidade de Software</span>
+          <span class="chip">WebScraping</span>
+        </div>
+        <h1>Olá, eu sou <span id="typing"></span></h1>
+        <!--Texto que se escreve-->
+        <p
+          style="max-width: 52ch; color: var(--muted); margin: 0.6rem 0 1.2rem"
+        >
+          QA • Testes Automatizados • BDD • SCRUM<!--Competencias totais-->
+        </p>
+        <a class="cta" href="#contato">Fale comigo</a>
+      </div>
+      <div class="hero-card">
+        <svg width="220" height="220" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <clipPath id="circleView">
+              <circle cx="100" cy="100" r="95" />
+            </clipPath>
+          </defs>
+          <image
+            href="https://media.licdn.com/dms/image/v2/D4D35AQG1NX9xjoQbpw/profile-framedphoto-shrink_200_200/B4DZn1sHmaGgAY-/0/1760763607766?e=1762822800&v=beta&t=lVZ9vB2gHboal3yvJCMT9aNOLlzloUf8lvVZmM58QSc"
+            width="200"
+            height="200"
+            clip-path="url(#circleView)"
+            preserveAspectRatio="xMidYMid slice"
+          ></image>
+          <!-- Foto de perfil -->
+          <!--https://avatars.githubusercontent.com/u/171820503-->
+          <circle
+            cx="100"
+            cy="100"
+            r="95"
+            fill="none"
+            stroke="var(--accent)"
+            stroke-width="4"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="wrap reveal">
+      <h2 class="section-title"><span class="bar"></span> Sobre mim</h2>
+      <p style="max-width: 70ch">
+        Sou Uruguaio, mas moro em Ilhabela-SP desde meus 5 anos. Estou
+        finalizando um curso de QA pela ONG Instituto Joga Junto. Sou um
+        profissional versátil, com experiência em manutenção de equipamentos
+        eletrônicos, tecnologia e assistência técnica. Tenho facilidade para
+        compreender sistemas e processos, além de curiosidade natural para
+        aprender e aprimorar métodos de trabalho. Gosto de unir raciocínio
+        lógico e prática para resolver problemas de forma eficiente, buscando
+        sempre entregar resultados de qualidade e contribuir para o bom
+        funcionamento das operações.
       </p>
-      <a class="cta" href="#contato">Fale comigo</a>
-    </div>
-    <div class="hero-card">
-      <svg width="220" height="220" viewBox="0 0 200 200" aria-hidden="true">
-        <defs>
-          <clipPath id="circleView">
-            <circle cx="100" cy="100" r="95" />
-          </clipPath>
-        </defs>
-        <image href="https://avatars.githubusercontent.com/u/153308202?v=4"
-          width="200" height="200" clip-path="url(#circleView)" preserveAspectRatio="xMidYMid slice"</image> <!-- Foto de perfil --> <!--https://avatars.githubusercontent.com/u/171820503-->
-        <circle cx="100" cy="100" r="95" fill="none" stroke="var(--accent)" stroke-width="4"/>
-      </svg>
-    </div>
-  </section>
+    </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="wrap reveal">
-    <h2 class="section-title"><span class="bar"></span> Sobre mim</h2>
-    <p style="max-width:70ch">
-      Sou Uruguaio, mas moro em Ilhabela-SP desde meus 5 anos. Estou finalizando um curso de QA pela ONG Instituto Joga Junto. Sou um profissional versátil, com experiência em manutenção de equipamentos eletrônicos, tecnologia e assistência técnica. Tenho facilidade para compreender sistemas e processos, além de curiosidade natural para aprender e aprimorar métodos de trabalho. Gosto de unir raciocínio lógico e prática para resolver problemas de forma eficiente, buscando sempre entregar resultados de qualidade e contribuir para o bom funcionamento das operações.
-    </p>
-  </section>
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="wrap reveal">
+      <h2 class="section-title"><span class="bar"></span> Experiência</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <h3>Restaurante Makai Ilhabela</h3>
+          <div class="when">2024 – 2025</div>
+          <p>Analista de Estoque</p>
+        </div>
+        <div class="t-item">
+          <h3>Canal MotoPLAY</h3>
+          <div class="when">2024 – 2024</div>
+          <p>Editor de Vídeo e Auxiliar Geral</p>
+        </div>
+        <div class="t-item">
+          <h3>Papelaria Bom Custo</h3>
+          <div class="when">2021 – 2023</div>
+          <p>Atendente e Social Media</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- EXPERIÊNCIA -->
-  <section id="experiencia" class="wrap reveal">
-    <h2 class="section-title"><span class="bar"></span> Experiência</h2>
-    <div class="timeline">
-      <div class="t-item">
-        <h3>Restaurante Makai Ilhabela</h3>
-        <div class="when">2024 – 2025</div>
-        <p>Analista de Estoque</p>
-      </div>
-      <div class="t-item">
-        <h3>Canal MotoPLAY</h3>
-        <div class="when">2024 – 2024</div>
-        <p>Editor de Vídeo e Auxiliar Geral</p>
-      </div>
-      <div class="t-item">
-        <h3>Papelaria Bom Custo</h3>
-        <div class="when">2021 – 2023</div>
-        <p>Atendente e Social Media</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJETOS
+    <!-- PROJETOS
   <section id="projetos" class="wrap reveal">
     <h2 class="section-title"><span class="bar"></span> Projetos em destaque</h2>
     <div class="grid">
@@ -212,65 +397,89 @@
     </div>
   </section>  -->
 
-<!-- PROJETOS -->
-<section id="projetos" class="wrap reveal">
-  <h2 class="section-title"><span class="bar"></span> Projetos em destaque</h2>
-  <div class="grid">
-    <a href="https://drive.google.com/file/d/1Q_rnj8TcQWeqxkIyw3EgDFJPGG4zkGD0/view?usp=drivesdk" 
-       target="_blank" 
-       class="card tilt link-card">
-      <h4>Fragmentos</h4>
-      <p>Participei da peça teatral “Fragmentos” como roteirista auxiliar, sonoplasta, editor de vídeo e assistente de direção, integrando diferentes áreas técnicas e criativas na produção da obra.</p>
-    </a>
-  </div>
-</section>
+    <!-- PROJETOS -->
+    <section id="projetos" class="wrap reveal">
+      <h2 class="section-title">
+        <span class="bar"></span> Projetos em destaque
+      </h2>
+      <div class="grid">
+        <a
+          href="https://drive.google.com/file/d/1Q_rnj8TcQWeqxkIyw3EgDFJPGG4zkGD0/view?usp=drivesdk"
+          target="_blank"
+          class="card tilt link-card"
+        >
+          <h4>Fragmentos</h4>
+          <p>
+            Participei da peça teatral “Fragmentos” como roteirista auxiliar,
+            sonoplasta, editor de vídeo e assistente de direção, integrando
+            diferentes áreas técnicas e criativas na produção da obra.
+          </p>
+        </a>
+      </div>
+    </section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="wrap reveal">
-    <h2 class="section-title"><span class="bar"></span> Contato</h2>
-    <div class="contacts">
-      <a class="pill" href="mailto:Leonardoezeblapag@gmail.com">
-        <i class="fa-solid fa-envelope"></i> E-mail
-      </a>
-      <a class="pill" href="https://wa.me/+5512996115516">
-        <i class="fa-solid fa-phone"></i> Telefone
-      </a>
-      <a class="pill" href="https://www.sparkstylus.com.br" target="_blank" rel="noopener">
-        <i class="fa-solid fa-globe"></i> Site
-      </a>
-      <a class="pill" href="https://www.linkedin.com/in/leonardo-e-b-pagliari" target="_blank" rel="noopener">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
-      <a class="pill" href="https://www.instagram.com/sparkstylus?igsh=MXBzc2w3ZHFwaXFkYg==" target="_blank" rel="noopener">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
-    </div>
-  </section>
+    <!-- CONTATO -->
+    <section id="contato" class="wrap reveal">
+      <h2 class="section-title"><span class="bar"></span> Contato</h2>
+      <div class="contacts">
+        <a class="pill" href="mailto:Leonardoezeblapag@gmail.com">
+          <i class="fa-solid fa-envelope"></i> E-mail
+        </a>
+        <a class="pill" href="https://wa.me/+5512996115516">
+          <i class="fa-solid fa-phone"></i> Telefone
+        </a>
+        <a
+          class="pill"
+          href="https://www.sparkstylus.com.br"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-solid fa-globe"></i> Site
+        </a>
+        <a
+          class="pill"
+          href="https://www.linkedin.com/in/leonardo-e-b-pagliari"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a
+          class="pill"
+          href="https://www.instagram.com/sparkstylus?igsh=MXBzc2w3ZHFwaXFkYg=="
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+      </div>
+    </section>
 
-  <footer>© 2025 • Leonardo E. Blanco Pagliari</footer>
+    <footer>© 2025 • Leonardo E. Blanco Pagliari</footer>
 
-<script>
-  // Tema (dark/light)
-  const root = document.documentElement;
-  const saved = localStorage.getItem('theme');
-  if(saved) root.setAttribute('data-theme', saved);
-  document.getElementById('themeToggle').addEventListener('click', ()=>{
-    const t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    root.setAttribute('data-theme', t);
-    localStorage.setItem('theme', t);
-  });
+    <script>
+      // Tema (dark/light)
+      const root = document.documentElement;
+      const saved = localStorage.getItem("theme");
+      if (saved) root.setAttribute("data-theme", saved);
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        const t =
+          root.getAttribute("data-theme") === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", t);
+        localStorage.setItem("theme", t);
+      });
 
-  // Efeito de digitação
-  const typingEl = document.getElementById('typing');
-  const nameText = 'Leonardo Blanco'; // js efeito de digitação
-  let idx = 0;
-  function type() {
-    if (idx <= nameText.length){
-      typingEl.textContent = nameText.slice(0, idx++);
-      setTimeout(type, 90);
-    }
-  }
-  document.addEventListener('DOMContentLoaded', type);
-</script>
-</body>
+      // Efeito de digitação
+      const typingEl = document.getElementById("typing");
+      const nameText = "Leonardo Blanco"; // js efeito de digitação
+      let idx = 0;
+      function type() {
+        if (idx <= nameText.length) {
+          typingEl.textContent = nameText.slice(0, idx++);
+          setTimeout(type, 90);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", type);
+    </script>
+  </body>
 </html>
