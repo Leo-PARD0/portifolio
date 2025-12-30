@@ -343,17 +343,7 @@
     <!-- SOBRE -->
     <section id="sobre" class="wrap reveal">
       <h2 class="section-title"><span class="bar"></span> Sobre mim</h2>
-      <p style="max-width: 70ch">
-        Sou Uruguaio, mas moro em Ilhabela-SP desde meus 5 anos. Estou
-        finalizando um curso de QA pela ONG Instituto Joga Junto. Sou um
-        profissional versátil, com experiência em manutenção de equipamentos
-        eletrônicos, tecnologia e assistência técnica. Tenho facilidade para
-        compreender sistemas e processos, além de curiosidade natural para
-        aprender e aprimorar métodos de trabalho. Gosto de unir raciocínio
-        lógico e prática para resolver problemas de forma eficiente, buscando
-        sempre entregar resultados de qualidade e contribuir para o bom
-        funcionamento das operações.
-      </p>
+      <p id="sobreContent" style="max-width: 70ch"></p>
     </section>
 
     <!-- EXPERIÊNCIA -->
@@ -458,6 +448,14 @@
     <footer>© 2025 • Leonardo E. Blanco Pagliari</footer>
 
     <script>
+      // Carregar conteúdo "Sobre"
+      fetch('sobre.txt')
+        .then(response => response.text())
+        .then(text => {
+          document.getElementById('sobreContent').textContent = text;
+        })
+        .catch(error => console.error('Erro ao carregar sobre.txt:', error));
+
       // Tema (dark/light)
       const root = document.documentElement;
       const saved = localStorage.getItem("theme");
